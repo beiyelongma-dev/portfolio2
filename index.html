@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYOMA KAINO PORTFOLIO</title>
+
+    <!-- フォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 背景の薄い動画 -->
+    <div class="bg-video-layer">
+        <video src="video/car_break.mp4" autoplay muted loop playsinline></video>
+    </div>
+
+    <!-- ページフェード -->
+    <div id="page-fade-layer"></div>
+
+    <!-- ローディング -->
+    <div id="loading-screen">LOADING...</div>
+
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-main">RYOMA KAINO</span>
+                <span class="logo-sub">PORTFOLIO</span>
+            </a>
+            <nav class="main-nav">
+                <a href="#works">WORKS</a>
+                <a href="#about-portfolio">CONCEPT</a>
+                <a href="#profile">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-video-wrap">
+            <video id="heroVideo" autoplay muted playsinline>
+                <source src="video/car.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text">
+            <p class="hero-eyebrow fade-up-hidden">
+                VISUAL CREATION / CG / MOTION
+            </p>
+
+            <h1 id="main-title" class="fade-up-hidden">
+                RYOMA KAINO PORTFOLIO
+                <span class="shine"></span>
+            </h1>
+
+            <h2 id="sub-title" class="fade-up-hidden">
+                CAR × PRODUCT × SPACE VISUALS
+            </h2>
+        </div>
+
+        <div class="hero-scroll">
+            <span>SCROLL</span>
+            <span class="hero-scroll-line"></span>
+        </div>
+
+    </section>
+
+    <!-- CONCEPT -->
+    <section id="about-portfolio" class="section section-light">
+        <div class="section-inner narrow">
+            <h2 class="section-label">CONCEPT</h2>
+            <p class="lead-text">
+                光と影, 質感と空気を軸に映像を制作しています。高速で動くものの一瞬を切り取り,
+                丁寧な構図とマテリアル表現で世界観を形にしています。
+            </p>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section id="creation-philosophy" class="section section-dark">
+
+        <!-- 背景動画 -->
+        <div class="philo-bg-video">
+            <video src="video/haikei.mp4" autoplay muted loop playsinline></video>
+        </div>
+
+        <div class="section-inner narrow">
+            <h2 class="section-label">PHILOSOPHY</h2>
+            <p class="lead-text">
+                光, 影, 質感, 空気。小さな要素を積み重ねることで,
+                温度や音まで想像できる映像をつくることを大切にしています。
+            </p>
+        </div>
+
+    </section>
+
+    <!-- WORKS -->
+    <section id="works" class="section section-light">
+        <div class="section-inner wide">
+
+            <div class="section-header">
+                <h2 class="section-title">WORKS</h2>
+                <p class="section-caption">CAR VISUAL / PRODUCT / SPACE / MATERIAL</p>
+            </div>
+
+            <!-- 1. CAR VISUAL -->
+            <article class="work-card">
+                <a href="car.html" class="work-link">
+                    <div class="work-media">
+                        <img src="img/car_frame_0209.jpg" alt="">
+                    </div>
+                    <div class="work-meta">
+                        <p class="work-category">CAR VISUAL</p>
+                        <h3 class="work-title">都市の速度と光の粒を切り裂く一瞬</h3>
+                        <p class="work-desc">
+                            高速で動く車の質量感と光の軌跡をCGで再現した作品。
+                            モーションと環境光の調整に重点を置いて制作。
+                        </p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- 2. WATCH -->
+            <article class="work-card">
+                <a href="watch.html" class="work-link">
+                    <div class="work-media">
+                        <img src="img/watch.jpg" alt="">
+                    </div>
+                    <div class="work-meta">
+                        <p class="work-category">PRODUCT</p>
+                        <h3 class="work-title">時間を質感で語るプロダクトCG</h3>
+                        <p class="work-desc">
+                            金属、ガラス、シャドウの繊細な表現を追求した高級腕時計CG。
+                            マテリアルづくりに重点を置いた研究的作品。
+                        </p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- 3. INFINITE CASTLE -->
+            <article class="work-card">
+                <a href="castle.html" class="work-link">
+                    <div class="work-media">
+                        <img src="img/infinite_castle.jpg" class="tall-img" alt="">
+                    </div>
+                    <div class="work-meta">
+                        <p class="work-category">SPACE DESIGN</p>
+                        <h3 class="work-title">空間の奥行きが物語を呼び込む</h3>
+                        <p class="work-desc">
+                            光の差し込みや床材の反射など、空間構成と陰影の効果を意識した作品。
+                        </p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- 4. CHURCH -->
+            <article class="work-card">
+                <a href="church.html" class="work-link">
+                    <div class="work-media">
+                        <img src="img/church.jpg" alt="">
+                    </div>
+                    <div class="work-meta">
+                        <p class="work-category">SPACE VISUAL</p>
+                        <h3 class="work-title">静寂の中に漂う光と陰の余韻</h3>
+                        <p class="work-desc">
+                            古い教会の重厚感と光のコントラストを表現した作品。
+                            素材感と空気感の描写にこだわって制作。
+                        </p>
+                    </div>
+                </a>
+            </article>
+
+            <!-- 5. PERFUME -->
+            <article class="work-card">
+                <a href="others.html" class="work-link">
+                    <div class="work-media">
+                        <img src="img/perfume.jpg" class="tall-img" alt="">
+                    </div>
+                    <div class="work-meta">
+                        <p class="work-category">MATERIAL STUDY</p>
+                        <h3 class="work-title">質感を纏わせるための実験的ショット</h3>
+                        <p class="work-desc">
+                            ガラス・金属・布といった素材の研究として制作したシーン。
+                            ライティングと反射のコントロールがテーマ。
+                        </p>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile" class="section section-dark">
+        <div class="section-inner narrow">
+            <h2 class="section-title profile-title">ABOUT ME</h2>
+
+            <div class="profile-box">
+                <div class="profile-img">
+                    <div class="profile-img-frame">
+                        <img src="img/profile.jpg" alt="">
+                    </div>
+                </div>
+                <div class="profile-text">
+                    <h3 class="profile-name">貝野 遼馬 / Ryoma Kaino</h3>
+                    <p>
+                        3D映像・CG制作を中心に活動。質感表現とライティングを強みに、
+                        プロダクトや空間をリアルかつ印象に残る形で描くことを目指しています。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-copy">© RYOMA KAINO PORTFOLIO</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT =========================================== -->
+    <script>
+    window.addEventListener('load', () => {
+
+        /* ① ローディング解除 */
+        const loading = document.getElementById('loading-screen');
+        const pageFade = document.getElementById('page-fade-layer');
+        loading.classList.add('hide');
+        pageFade.classList.add('hide');
+
+        /* ② 初回訪問だけスクロール禁止 */
+        const isFirstVisit = !sessionStorage.getItem('visited');
+        if (isFirstVisit) {
+            document.body.classList.add('no-scroll');
+
+            const scrollLockTime = 3.0;
+            setTimeout(() => {
+                document.body.classList.remove('no-scroll');
+                sessionStorage.setItem('visited', 'true');
+            }, scrollLockTime * 1000);
+        }
+
+        /* ③ タイトル演出（2.5秒で発火） */
+        const video = document.getElementById('heroVideo');
+        const eyebrow = document.querySelector('.hero-eyebrow');
+        const mainTitle = document.getElementById('main-title');
+        const subTitle = document.getElementById('sub-title');
+
+        const cueTime = 2.5;
+
+        eyebrow.classList.remove('fade-up-show');
+        mainTitle.classList.remove('fade-up-show');
+        subTitle.classList.remove('fade-up-show');
+
+        video.addEventListener('timeupdate', () => {
+            if (!window._titleAppeared && video.currentTime >= cueTime) {
+
+                window._titleAppeared = true;
+
+                setTimeout(() => { eyebrow.classList.add('fade-up-show'); }, 0);
+                setTimeout(() => { mainTitle.classList.add('fade-up-show'); }, 500);
+                setTimeout(() => { subTitle.classList.add('fade-up-show'); }, 1100);
+            }
+        });
+
+        /* ④ 動画終了で静止 */
+        video.addEventListener('ended', () => {
+            video.pause();
+            video.currentTime = video.duration;
+        });
+
+    });
+    </script>
+
+</body>
+</html>

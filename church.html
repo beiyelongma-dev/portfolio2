@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR VISUAL – RYOMA KAINO</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work-page.css"> <!-- 個別ページ用のCSS -->
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <span class="logo-main">RYOMA KAINO</span>
+            <span class="logo-sub">PORTFOLIO</span>
+        </a>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO（サムネ + 再生ボタン） -->
+    <section class="work-hero">
+        <img src="img/church.jpg" class="work-hero-thumb">
+
+        <button class="video-play-btn" id="openVideo">
+            ▶
+        </button>
+
+        <div class="work-hero-title">
+            <h1>SPACE VISUAL</h1>
+            <p>静寂の中に漂う光と陰の余韻</p>
+        </div>
+    </section>
+
+    <!-- 解説セクション -->
+    <section class="work-section">
+        <div class="section-inner narrow">
+            <h2 class="work-heading">CONCEPT</h2>
+            <p class="work-lead">
+                古い教会に射し込む柔らかな光と、静けさの中にある緊張感を表現した作品。
+石材の重厚さ、空気中に漂う微細な光、陰影の落ち方を丁寧に観察し、
+空間としての“温度”を感じられるようにまとめました。
+物語を語りすぎず、見る側に余白を残す構成を意識しています。
+            </p>
+
+            <h2 class="work-heading">TECHNIQUE</h2>
+            <p class="work-lead">
+                石材の質感づくりでは、表面のざらつきと光の吸収を再現するため、
+ノーマルとラフネスを細かく調整しています。
+窓から差し込む光は、ボリュームライトを弱めに設定し、
+光の筋が自然に見える密度を繰り返しテストしました。
+カメラは低い位置からわずかに上向きにし、
+天井の広がりと空間の奥行きを強調しています。
+            </p>
+        </div>
+    </section>
+
+    <!-- ギャラリー -->
+    <section class="work-gallery section">
+        <div class="section-inner wide">
+            <h2 class="work-heading">GALLERY</h2>
+
+            <div class="gallery-grid">
+                <img src="img/church.jpg">
+                <img src="img/church_1.jpg">
+                <img src="img/church_2.jpg">
+                <img src="img/church_3.jpg">
+                <!-- 必要なら追加 -->
+                <!-- <img src="img/car_sub_01.jpg"> -->
+                <!-- <img src="img/car_sub_02.jpg"> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 他作品リンク -->
+    <section class="work-nav">
+        <a href="index.html" class="back-btn">← BACK TO WORKS</a>
+    </section>
+
+</main>
+
+<!-- モーダル動画 -->
+<div id="videoModal" class="modal-overlay">
+    <div class="modal-content">
+        <video id="modalVideo" controls>
+            <source src="video/church.mp4" type="video/mp4">
+        </video>
+        <button id="closeVideo" class="modal-close">×</button>
+    </div>
+</div>
+
+<script src="work-page.js"></script>
+
+</body>
+</html>

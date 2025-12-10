@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR VISUAL – RYOMA KAINO</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work-page.css"> <!-- 個別ページ用のCSS -->
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <span class="logo-main">RYOMA KAINO</span>
+            <span class="logo-sub">PORTFOLIO</span>
+        </a>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO（サムネ + 再生ボタン） -->
+    <section class="work-hero">
+        <img src="img/infinite_castle.jpg" class="work-hero-thumb">
+
+        <button class="video-play-btn" id="openVideo">
+            ▶
+        </button>
+
+        <div class="work-hero-title">
+            <h1>SPACE DESIGN</h1>
+            <p>空間の奥行きが物語を呼び込む</p>
+        </div>
+    </section>
+
+    <!-- 解説セクション -->
+    <section class="work-section">
+        <div class="section-inner narrow">
+            <h2 class="work-heading">CONCEPT</h2>
+            <p class="work-lead">
+                果てしなく続く回廊と、どこからともなく差し込む光をテーマにした空間作品。
+現実には存在しない構造でありながら、
+“そこに確かに空気が流れている”と感じられるよう、
+光の角度、床の反射、影の落ち方を丁寧に構成しました。
+空間そのものが物語の入口となるよう、
+余白を残したバランスでまとめています。
+            </p>
+
+            <h2 class="work-heading">TECHNIQUE</h2>
+            <p class="work-lead">
+                床の反射は強くしすぎず、奥行きが自然に伸びて見えるように
+ラフネスと反射率を細かく調整しています。
+ライトは複数点を弱めに配置し、光源そのものが目立ちすぎないように
+環境光と直射光のバランスを取っています。
+カメラは望遠寄りのレンズ設定を使用し、空間の圧縮感と奥行きの連続性を強調。
+グリッド構造の繰り返しによる “無限感” を表現しています。
+            </p>
+        </div>
+    </section>
+
+    <!-- ギャラリー -->
+    <section class="work-gallery section">
+        <div class="section-inner wide">
+            <h2 class="work-heading">GALLERY</h2>
+
+            <div class="gallery-grid">
+                <img src="img/infinite_castle.jpg">
+                <img src="img/castle_1.jpg">
+                <!-- 必要なら追加 -->
+                <img src="img/castle_2.jpg">
+                <img src="img/castle_3.jpg">
+                <!-- <img src="img/car_sub_02.jpg"> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 他作品リンク -->
+    <section class="work-nav">
+        <a href="index.html" class="back-btn">← BACK TO WORKS</a>
+    </section>
+
+</main>
+
+<!-- モーダル動画 -->
+<div id="videoModal" class="modal-overlay">
+    <div class="modal-content">
+        <video id="modalVideo" controls>
+            <source src="video/infinite_castle.mp4" type="video/mp4">
+        </video>
+        <button id="closeVideo" class="modal-close">×</button>
+    </div>
+</div>
+
+<script src="work-page.js"></script>
+
+</body>
+</html>
