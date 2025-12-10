@@ -610,6 +610,18 @@ html, body {
     }
 }
 
+<section class="hero">
+    <video id="heroVideo" ...></video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+        <p class="hero-eyebrow">...</p>
+        <h1 id="main-title">RYOMA KAINO PORTFOLIO</h1>
+        <h2 id="sub-title">CAR × PRODUCT × SPACE VISUALS</h2>
+    </div>
+</section>
+
 
 
 
