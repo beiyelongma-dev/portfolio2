@@ -567,16 +567,18 @@ html, body {
     }
 }
 
-/* ============================
-   スマホ専用：縦横比固定ヒーロー
-============================ */
+/* =========================================
+   ★ スマホ・iOS・LINEブラウザ完全対応 HERO（動画）
+========================================= */
 @media (max-width: 768px) {
 
     .hero {
         position: relative;
-        width: 100%;
-        /* 16:9 の縦横比に固定 */
-        aspect-ratio: 16 / 9;
+        width: 100vw;
+
+        /* iOS・LINE どちらでもズレが最も少ない */
+        height: 100svh;
+        max-height: 100svh;
         overflow: hidden;
         background: #000;
     }
@@ -586,27 +588,28 @@ html, body {
         top: 50%;
         left: 50%;
 
-        width: 100%;
-        height: auto;
-
-        transform: translate(-50%, -50%);
+        /* これが最適解：画面いっぱいを塗りつぶす */
+        width: 100vw;
+        height: 100svh;
         object-fit: cover;
-        pointer-events: none;
-    }
-}
-@supports (-webkit-touch-callout: none) {
-    @media (max-width: 768px) {
-        .hero {
-            aspect-ratio: 16 / 9 !important;
-            height: auto !important;
-        }
 
-        #heroVideo {
-            width: 110% !important;
-            height: auto !important;
-        }
+        /* 中央合わせ */
+        transform: translate(-50%, -50%);
+
+        /* LINE 内ブラウザのズレ補正（効く） */
+        max-width: 120vw;
+        min-width: 100vw;
+        min-height: 100svh;
+    }
+
+    /* タイトル位置の補正（動画に文字が食い込むのを防止） */
+    .hero-text {
+        padding-top: 10vh;
+        z-index: 3;
+        position: relative;
     }
 }
+
 
 
 
