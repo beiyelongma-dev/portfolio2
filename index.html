@@ -236,50 +236,60 @@
         const pageFade = document.getElementById('page-fade-layer');
         loading.classList.add('hide');
         pageFade.classList.add('hide');
+    /* -------------------------------------
+       ① 初回アクセスだけスクロール禁止
+       ------------------------------------- */
+    const isFirstVisit = !sessionStorage.getItem('visited');
+    const scrollText = document.querySelector('.hero-scroll');
 
-        /* ② 初回訪問だけスクロール禁止 */
-        const isFirstVisit = !sessionStorage.getItem('visited');
-        if (isFirstVisit) {
-            document.body.classList.add('no-scroll');
+    if (isFirstVisit) {
+        document.body.classList.add('no-scroll');
 
-            const scrollLockTime = 3.0;
-            setTimeout(() => {
-                document.body.classList.remove('no-scroll');
-                sessionStorage.setItem('visited', 'true');
-            }, scrollLockTime * 1000);
+        // SCROLL の文字は非表示のまま
+        scrollText.classList.remove('show');
+
+        setTimeout(() => {
+            // スクロール解禁
+            document.body.classList.remove('no-scroll');
+            sessionStorage.setItem('visited', 'true');
+
+            // 同時に SCROLL をフェード表示
+            scrollText.classList.add('show');
+
+        }, 3000); // ← 3秒
+    } else {
+        // 2回目以降は最初から表示
+        scrollText.classList.add('show');
+    }
+
+
+    /* -------------------------------------
+       ② タイトル演出（現状のまま）
+       ------------------------------------- */
+    const video = document.getElementById('heroVideo');
+    const eyebrow = document.querySelector('.hero-eyebrow');
+    const mainTitle = document.getElementById('main-title');
+    const subTitle = document.getElementById('sub-title');
+
+    const cueTime = 2.5;
+    eyebrow.classList.remove('fade-up-show');
+    mainTitle.classList.remove('fade-up-show');
+    subTitle.classList.remove('fade-up-show');
+
+    video.addEventListener('timeupdate', () => {
+        if (!window._titleAppeared && video.currentTime >= cueTime) {
+            window._titleAppeared = true;
+
+            setTimeout(() => { eyebrow.classList.add('fade-up-show'); }, 0);
+            setTimeout(() => { mainTitle.classList.add('fade-up-show'); }, 500);
+            setTimeout(() => { subTitle.classList.add('fade-up-show'); }, 1100);
         }
-
-        /* ③ タイトル演出（2.5秒で発火） */
-        const video = document.getElementById('heroVideo');
-        const eyebrow = document.querySelector('.hero-eyebrow');
-        const mainTitle = document.getElementById('main-title');
-        const subTitle = document.getElementById('sub-title');
-
-        const cueTime = 2.5;
-
-        eyebrow.classList.remove('fade-up-show');
-        mainTitle.classList.remove('fade-up-show');
-        subTitle.classList.remove('fade-up-show');
-
-        video.addEventListener('timeupdate', () => {
-            if (!window._titleAppeared && video.currentTime >= cueTime) {
-
-                window._titleAppeared = true;
-
-                setTimeout(() => { eyebrow.classList.add('fade-up-show'); }, 0);
-                setTimeout(() => { mainTitle.classList.add('fade-up-show'); }, 500);
-                setTimeout(() => { subTitle.classList.add('fade-up-show'); }, 1100);
-            }
-        });
-
-        /* ④ 動画終了で静止 */
-        video.addEventListener('ended', () => {
-            video.pause();
-            video.currentTime = video.duration;
-        });
-
     });
-    </script>
+
+});
+</script>
+
 
 </body>
 </html>
+
