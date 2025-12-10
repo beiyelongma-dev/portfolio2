@@ -568,16 +568,17 @@ html, body {
 }
 
 /* ============================
-   スマホ（iOS含む）専用 HERO 調整 最終版
+   スマホ専用：縦横比固定ヒーロー
 ============================ */
 @media (max-width: 768px) {
 
     .hero {
         position: relative;
         width: 100%;
-        height: 100svh; /* ← 安定 */
-        min-height: 100svh;
+        /* 16:9 の縦横比に固定 */
+        aspect-ratio: 16 / 9;
         overflow: hidden;
+        background: #000;
     }
 
     #heroVideo {
@@ -586,30 +587,27 @@ html, body {
         left: 50%;
 
         width: 100%;
-        height: 100%;
+        height: auto;
 
-        object-fit: cover;
         transform: translate(-50%, -50%);
-
-        min-width: 110%;   /* ← ほんの少しズームさせて黒帯防止 */
-        min-height: 110%;
+        object-fit: cover;
+        pointer-events: none;
     }
 }
-
-/* iOS 判定 + さらに強制補正 */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 768px) {
         .hero {
-            height: 100svh !important;
-            min-height: 100svh !important;
+            aspect-ratio: 16 / 9 !important;
+            height: auto !important;
         }
+
         #heroVideo {
             width: 110% !important;
-            height: 110% !important;
-            object-fit: cover !important;
+            height: auto !important;
         }
     }
 }
+
 
 
 
