@@ -622,6 +622,15 @@ html, body {
     </div>
 </section>
 
+.hero-scroll {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.hero-scroll.show {
+    opacity: 1;
+}
+
 
 
 
