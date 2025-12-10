@@ -292,4 +292,81 @@
 
 </body>
 </html>
+<script>
+window.addEventListener("load", () => {
+
+    /* -------------------------------------
+       ① HERO 動画の事前停止（最重要）
+       ------------------------------------- */
+    const heroVideo = document.getElementById("heroVideo");
+    heroVideo.pause();
+    heroVideo.currentTime = 0;  // 再生位置リセット
+
+
+    /* -------------------------------------
+       ② ローディング解除後に動画を再生
+       ------------------------------------- */
+    const loading = document.getElementById("loading-screen");
+    const pageFade = document.getElementById("page-fade-layer");
+    const scrollText = document.querySelector(".hero-scroll");
+
+    loading.classList.add("hide");
+    pageFade.classList.add("hide");
+
+    // ローディングのCSSアニメが終わるタイミングに合わせる（0.6s）
+    setTimeout(() => {
+        heroVideo.play().catch(() => {
+            // iOS の再生失敗時：初タッチで再生
+            document.addEventListener("touchstart", () => {
+                heroVideo.play();
+            }, { once: true });
+        });
+    }, 600);
+
+
+    /* -------------------------------------
+       ③ 初回アクセス時のスクロール禁止
+       ------------------------------------- */
+    const isFirstVisit = !sessionStorage.getItem("visited");
+
+    scrollText.classList.remove("show");
+
+    if (isFirstVisit) {
+        document.body.classList.add("no-scroll");
+
+        setTimeout(() => {
+            document.body.classList.remove("no-scroll");
+            sessionStorage.setItem("visited", "true");
+            scrollText.classList.add("show");
+        }, 3000);
+    } else {
+        scrollText.classList.add("show");
+    }
+
+
+    /* -------------------------------------
+       ④ タイトル演出
+       ------------------------------------- */
+    const eyebrow = document.querySelector(".hero-eyebrow");
+    const mainTitle = document.getElementById("main-title");
+    const subTitle = document.getElementById("sub-title");
+
+    eyebrow.classList.remove("fade-up-show");
+    mainTitle.classList.remove("fade-up-show");
+    subTitle.classList.remove("fade-up-show");
+
+    const cueTime = 2.5;
+
+    heroVideo.addEventListener("timeupdate", () => {
+        if (!window._titleShown && heroVideo.currentTime >= cueTime) {
+            window._titleShown = true;
+
+            setTimeout(() => eyebrow.classList.add("fade-up-show"), 0);
+            setTimeout(() => mainTitle.classList.add("fade-up-show"), 500);
+            setTimeout(() => subTitle.classList.add("fade-up-show"), 1100);
+        }
+    });
+});
+</script>
+
 
