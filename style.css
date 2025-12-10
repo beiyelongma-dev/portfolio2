@@ -566,3 +566,49 @@ html, body {
         opacity: 0.32 !important; /* ← これで確実に再生されやすくなる */
     }
 }
+/* =========================================
+   ★ スマホの HERO 動画サイズを調整（過拡大を防ぐ）
+========================================= */
+
+@media (max-width: 768px) {
+
+    #heroVideo {
+        /* これが最も重要（縦横どちらにも合わせる） */
+        width: 100vw;
+        height: 100vh;
+
+        /* 中心を維持しつつ、はみ出しを軽減 */
+        object-fit: cover;
+
+        /* 以前の min-width/min-height を無効化 */
+        min-width: 0 !important;
+        min-height: 0 !important;
+
+        /* ズームしすぎを防ぐ */
+        transform: translate(-50%, -50%) scale(1.0) !important;
+    }
+
+    .hero {
+        height: 100vh;
+    }
+}
+
+/* iOS Safari 用の追加調整 */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+
+        #heroVideo {
+            width: 100vw !important;
+            height: 100svh !important;
+            object-fit: cover !important;
+
+            /* 必ず全体が見えるバランスの良い倍率 */
+            transform: translate(-50%, -50%) scale(1.0) !important;
+        }
+
+        .hero {
+            height: 100svh !important;
+        }
+    }
+}
+
