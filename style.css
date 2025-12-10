@@ -566,49 +566,53 @@ html, body {
         opacity: 0.32 !important; /* ← これで確実に再生されやすくなる */
     }
 }
+
 /* =========================================
-   ★ スマホの HERO 動画サイズを調整（過拡大を防ぐ）
+   ★ iPhone / スマホ専用 HERO 安定レイアウト
 ========================================= */
 
 @media (max-width: 768px) {
 
-    #heroVideo {
-        /* これが最も重要（縦横どちらにも合わせる） */
-        width: 100vw;
+    .hero {
+        position: relative;
+        width: 100%;
         height: 100vh;
+        overflow: hidden;
+    }
 
-        /* 中心を維持しつつ、はみ出しを軽減 */
+    #heroVideo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        /* iOS のズレを防ぐために vw を使わない */
+        width: 100%;
+        height: 100%;
+        
         object-fit: cover;
 
-        /* 以前の min-width/min-height を無効化 */
-        min-width: 0 !important;
-        min-height: 0 !important;
+        /* iPhone で中央に正しく固定 */
+        transform: translate(-50%, -50%);
 
-        /* ズームしすぎを防ぐ */
-        transform: translate(-50%, -50%) scale(1.0) !important;
-    }
+        /* 過拡大防止 */
+        min-width: 100%;
+        min-height: 100%;
 
-    .hero {
-        height: 100vh;
+        /* 追加：左右・上下ズレ完全防止 */
+        max-width: none !important;
+        max-height: none !important;
     }
 }
 
-/* iOS Safari 用の追加調整 */
+/* iOS Safari 固有バグ対応 */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 768px) {
-
         #heroVideo {
-            width: 100vw !important;
-            height: 100svh !important;
+            width: 100% !important;
+            height: 100% !important;
             object-fit: cover !important;
-
-            /* 必ず全体が見えるバランスの良い倍率 */
-            transform: translate(-50%, -50%) scale(1.0) !important;
-        }
-
-        .hero {
-            height: 100svh !important;
         }
     }
 }
+
 
